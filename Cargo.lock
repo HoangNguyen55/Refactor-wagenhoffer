@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "Refactor-wagenhoffer"
+name = "refactor_wagenhoffer"
 version = "0.1.0"
