@@ -16,13 +16,13 @@ jobs:
           - beta
           - nightly
     steps:
-      - name: installing
+      - name: checkout
         uses: actions/checkout@v3
+      - name: installing rust
         run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
-      - name: code coverage and test
-        uses: taiki-e/install-action@v2
-        with: 
-          tool: cargo-llvm-cov
+      - name: installing cargo llvm cov
+        uses: taiki-e/install-action@cargo-llvm-cov
+      - name: test and coeverage
         run: cargo llvm-cov
       - name: linting
         run: cargo clippy --all-targets --all-features
