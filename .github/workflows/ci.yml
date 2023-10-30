@@ -24,5 +24,7 @@ jobs:
         uses: taiki-e/install-action@cargo-llvm-cov
       - name: test and coeverage
         run: cargo llvm-cov
+      - name: install clippy
+        run: rustup component add clippy
       - name: linting
         run: cargo clippy --all-targets --all-features
